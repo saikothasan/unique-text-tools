@@ -1093,8 +1093,12 @@ export async function performConversion(type: string, input: string, options?: a
       default:
         throw new Error("Unsupported conversion type")
     }
-  } catch (error) {
-    throw new Error(`Conversion failed: ${error.message}`)
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      throw new Error(`Conversion failed: ${error.message}`)
+    } else {
+      throw new Error("Conversion failed: An unknown error occurred")
+    }
   }
 }
 
