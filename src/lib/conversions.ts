@@ -1308,7 +1308,7 @@ function csvToJson(csv: string): string {
   const result = []
 
   for (let i = 1; i < lines.length; i++) {
-    const obj = {}
+    const obj: { [key: string]: string } = {}
     const currentLine = lines[i].split(",")
 
     for (let j = 0; j < headers.length; j++) {
