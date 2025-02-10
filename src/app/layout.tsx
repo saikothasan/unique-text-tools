@@ -5,13 +5,11 @@ import Footer from "@/components/Footer"
 import { ThemeProvider } from "@/components/ThemeProvider"
 import { Toaster } from "@/components/ui/toaster"
 import type React from "react"
+import { metadata } from "./metadata"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
-  title: "Text Tools - Professional Text Conversion Utilities",
-  description: "A comprehensive collection of text conversion tools for developers and tech enthusiasts.",
-}
+export { metadata }
 
 export default function RootLayout({
   children,
