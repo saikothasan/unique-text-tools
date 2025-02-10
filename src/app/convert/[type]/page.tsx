@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import ConversionTool from "@/components/ConversionTool"
 import { getConversionByType } from "@/lib/conversions"
 
+export const runtime = "edge"
+
 interface PageProps {
   params: { type: string }
 }
