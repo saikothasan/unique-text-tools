@@ -45,8 +45,8 @@ export default function ConversionTool({ conversion }: ConversionToolProps) {
     try {
       const result = await performConversion(conversion.type, input, options)
       setOutput(result)
-    } catch (error) {
-      setError(`Conversion failed: ${error.message}`)
+    } catch (err) {
+      setError(`Conversion failed: ${err instanceof Error ? err.message : "An unknown error occurred"}`)
     } finally {
       setIsLoading(false)
     }
